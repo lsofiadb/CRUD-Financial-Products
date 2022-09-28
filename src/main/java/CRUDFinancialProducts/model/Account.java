@@ -18,6 +18,6 @@ public class Account {
     private Long number;
     @Column(name = "password")
     private String password;
-    @JoinColumn(name = "titular_id") @OneToOne
-    private Person titular;
+    @JoinColumn(name = "owner_id") @OneToOne
+    private Person owner;
 }
