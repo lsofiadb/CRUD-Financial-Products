@@ -7,6 +7,8 @@ import CRUDFinancialProducts.repository.BankRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BankService {
     @Autowired
@@ -31,6 +33,10 @@ public class BankService {
         }else{
             return false;
         }
+    }
+
+    public List<Bank> getAll(){
+        return bankRepository.findAll();
     }
 
 }

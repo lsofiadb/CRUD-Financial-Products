@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/bank")
 public class BankController {
@@ -32,6 +34,11 @@ public class BankController {
     @DeleteMapping("/deleteById/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable Long id){
         return ResponseEntity.ok(bankService.deleteById(id));
+    }
+
+    @GetMapping("/getBanks")
+    public ResponseEntity<List<Bank>> getAll(){
+        return ResponseEntity.ok(bankService.getAll());
     }
 
 }
