@@ -22,4 +22,6 @@ public class Card {
     private Long number;
     @Column(name = "expiration_date")
     private Date expiration_date;
+    @JoinColumn(name = "account_id") @ManyToOne
+    private Account account;
 }
