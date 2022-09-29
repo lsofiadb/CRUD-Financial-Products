@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/debit")
 public class DebitController {
@@ -50,5 +52,10 @@ public class DebitController {
     @DeleteMapping("/deleteById/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable Long id){
         return ResponseEntity.ok(debitService.deleteById(id));
+    }
+
+    @GetMapping("/getAllDebitCards")
+    public ResponseEntity<List<Debit>> getAll(){
+        return ResponseEntity.ok(debitService.getDebits());
     }
 }
