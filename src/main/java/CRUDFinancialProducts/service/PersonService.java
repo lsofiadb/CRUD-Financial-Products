@@ -19,4 +19,13 @@ public class PersonService {
         return personRepository.findById(cc).get();
     }
 
+    public Boolean login(Long id, String password){
+        if(!personRepository.findById(id).isEmpty()){
+            Person person = findById(id);
+            if(person.getPassword().equals(password));
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

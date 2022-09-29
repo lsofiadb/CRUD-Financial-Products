@@ -23,4 +23,9 @@ public class PersonController {
         return ResponseEntity.ok(personService.findById(id));
     }
 
+    @GetMapping("/login")
+    public ResponseEntity<Boolean> login(@RequestParam(name = "id") Long id, @RequestParam(name = "password") String password){
+        return ResponseEntity.ok(personService.login(id, password));
+    }
+
 }
