@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "person")
 public class Person {
     @Id @Column(name = "id")
-    private Long cc;
+    private Long id;
     @Column(name = "name")
     private String name;
     @Column(name = "lastname")
