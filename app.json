@@ -1,0 +1,8 @@
+{
+  "name": "crud-financial-products",
+  "buildpacks": [
+    {
+      "url": "heroku/maven"
+    }
+  ]
+}
