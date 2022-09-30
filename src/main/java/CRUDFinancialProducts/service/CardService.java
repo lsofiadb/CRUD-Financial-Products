@@ -6,6 +6,8 @@ import CRUDFinancialProducts.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CardService {
     @Autowired
@@ -34,5 +36,10 @@ public class CardService {
         }else{
             return false;
         }
+    }
+
+    public List<Card> getCardsByAccountId(Long id){
+        System.out.println("adasdhasdhasd"+cardRepository.findByAccountID(id));
+        return cardRepository.findByAccountID(id);
     }
 }

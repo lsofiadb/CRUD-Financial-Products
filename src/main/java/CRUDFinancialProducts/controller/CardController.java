@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/card")
 public class CardController {
@@ -47,5 +49,10 @@ public class CardController {
     @DeleteMapping("/deleteById/{id}")
     public ResponseEntity<Boolean> deleteById(@PathVariable Long id){
         return ResponseEntity.ok(cardService.deleteById(id));
+    }
+
+    @GetMapping("/findByAccountIdentification/{id}")
+    public ResponseEntity<List<Card>> findByAccountIdentification(@PathVariable Long id){
+        return ResponseEntity.ok(cardService.getCardsByAccountId(id));
     }
 }
