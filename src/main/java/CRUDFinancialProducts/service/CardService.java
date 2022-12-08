@@ -42,4 +42,12 @@ public class CardService {
         System.out.println("adasdhasdhasd"+cardRepository.findByAccountID(id));
         return cardRepository.findByAccountID(id);
     }
+
+    public List<Card> getCardsByPersonID(Long id){
+        return cardRepository.findCardsByPersonID(id);
+    }
+
+    public List<Card> getCardsByPersonNameAndLastname(String name, String lastname){
+        return cardRepository.findCardsByPersonNameAndLastname(name, lastname);
+    }
 }

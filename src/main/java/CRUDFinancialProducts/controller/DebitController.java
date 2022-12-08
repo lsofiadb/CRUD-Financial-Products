@@ -3,8 +3,10 @@ package CRUDFinancialProducts.controller;
 import CRUDFinancialProducts.dto.DebitDTO;
 import CRUDFinancialProducts.model.Card;
 import CRUDFinancialProducts.model.Debit;
+import CRUDFinancialProducts.service.AccountService;
 import CRUDFinancialProducts.service.CardService;
 import CRUDFinancialProducts.service.DebitService;
+import CRUDFinancialProducts.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,12 @@ public class DebitController {
 
     @Autowired
     private CardService cardService;
+
+    @Autowired
+    private PersonService personService;
+
+    @Autowired
+    private AccountService accountService;
 
     @PostMapping("/save")
     public ResponseEntity<Debit> save(@RequestBody DebitDTO debitDTO){
@@ -57,5 +65,10 @@ public class DebitController {
     @GetMapping("/getAllDebitCards")
     public ResponseEntity<List<Debit>> getAll(){
         return ResponseEntity.ok(debitService.getDebits());
+    }
+
+    @GetMapping("/getDebitByClientID")
+    public ResponseEntity<Debit> getDebitByClientID(@RequestParam(name = "id") Long id){
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import CRUDFinancialProducts.dto.CardDTO;
 import CRUDFinancialProducts.model.Card;
 import CRUDFinancialProducts.service.AccountService;
 import CRUDFinancialProducts.service.CardService;
+import CRUDFinancialProducts.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,9 @@ public class CardController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private PersonService personService;
 
     @PostMapping("/save")
     public ResponseEntity<Card> save(@RequestBody CardDTO cardDTO){
@@ -54,5 +58,14 @@ public class CardController {
     @GetMapping("/findByAccountIdentification/{id}")
     public ResponseEntity<List<Card>> findByAccountIdentification(@PathVariable Long id){
         return ResponseEntity.ok(cardService.getCardsByAccountId(id));
+    }
+
+    @GetMapping("/findCardsByClientID")
+    public List<Card> getCardsByPersonID(@RequestParam(name = "id") Long id){
+       return cardService.getCardsByPersonID(id);
+    }
+    @GetMapping("/findCardsByClientNameAndLastname")
+    public List<Card> getCardByPersonNameAndLastName(@RequestParam(name = "name") String name, @RequestParam(name = "lastname") String lastname){
+        return cardService.getCardsByPersonNameAndLastname(name, lastname);
     }
 }

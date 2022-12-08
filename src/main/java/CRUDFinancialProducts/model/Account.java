@@ -20,4 +20,8 @@ public class Account {
     private String password;
     @JoinColumn(name = "owner_id") @OneToOne
     private Person owner;
+    @JoinColumn(name = "bank_id") @OneToOne
+    private Bank bank;
+    @Column(name = "insurance_category ")
+    private String insurance_category;
 }

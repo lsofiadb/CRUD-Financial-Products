@@ -28,4 +28,9 @@ public class PersonController {
         return ResponseEntity.ok(personService.login(id, password));
     }
 
+    @GetMapping("/findByNameAndLastname")
+    public ResponseEntity<Person> findByNameAndLastname(@RequestParam(name = "name") String name, @RequestParam(name = "lastname") String lastname){
+        return ResponseEntity.ok(personService.findByNameAndLastname(name, lastname));
+    }
+
 }

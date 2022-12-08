@@ -28,4 +28,8 @@ public class PersonService {
             return false;
         }
     }
+
+    public Person findByNameAndLastname(String name, String lastname){
+        return personRepository.findPersonByNameAndLastname(name, lastname);
+    }
 }

@@ -21,4 +21,9 @@ public class Credit {
     private double debt;
     @JoinColumn(name = "card_id") @OneToOne
     private Card card;
+    @Column(name = "credit_type")
+    private String crediyType;
+    @Column(name = "card_type")
+    private String cardType;
+
 }
