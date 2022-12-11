@@ -1,7 +1,7 @@
 # CRUD for Financial Products :moneybag::yen::money_with_wings::credit_card:
 
-## Frontend 
-You can check this [repo!](https://github.com/nida152/CRUD-finantial-products/tree/master)
+## Frontend :star2:
+You can check this [repo!](https://github.com/nida152/CRUD-finantial-products/tree/master) 
 
 ## Technologies :wrench::key:
 Spring Boot, Java 17, PostgreSQL, JPA, Lombok, Spring Data JPA, Postman.
