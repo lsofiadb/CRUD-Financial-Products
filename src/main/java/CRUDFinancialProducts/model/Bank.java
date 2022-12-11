@@ -15,6 +15,6 @@ public class Bank {
     @Id
     @Column(name = "id") @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "bankname")
     private String name;
 }

@@ -18,7 +18,7 @@ public class Card {
     private Long id;
     @Column(name = "cvc")
     private Long cvc;
-    @Column(name = "number")
+    @Column(name = "cardnumber")
     private Long number;
     @Column(name = "expiration_date")
     private Date expiration_date;

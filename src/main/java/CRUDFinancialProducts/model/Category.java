@@ -15,7 +15,7 @@ public class Category {
     @Id
     @Column(name = "id") @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "categoryname")
     private String name;
     @Column(name = "description")
     private String description;

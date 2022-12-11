@@ -12,9 +12,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "person")
 public class Person {
-    @Id @Column(name = "id")
+    @Id @Column(name = "CC")
     private Long id;
-    @Column(name = "name")
+    @Column(name = "personname")
     private String name;
     @Column(name = "lastname")
     private String lastname;

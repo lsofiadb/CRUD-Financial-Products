@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "credit")
 public class Credit {
     @Id
-    @Column(name = "id") @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "uniqueid") @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "quota")
     private double quota;
